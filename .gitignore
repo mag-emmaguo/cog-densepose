@@ -9,3 +9,5 @@ __pycache__
 
 # Exclude Python virtual environment
 /venv
+
+R_50_FPN_s1x
