@@ -26,3 +26,23 @@ Here are the inputs you need for prediction:
 ```
 cog predict -i input=@dorothy.jpg
 ```
+## To build an image and start a server
+Build the image
+```
+cog build -t <name>
+```
+Run a prediction on the image
+```
+cog predict <name> -i input=@<img or video file path>
+```
+Start a server
+```
+docker run -d --rm -p 5000:5000 <name>
+```
+Make a prediction with the server
+```
+curl http://localhost:5000/predictions -X POST \
+    -H 'Content-Type: application/json' \
+    -d '{"input": {"input": <string link to image>}}'
+
+```
